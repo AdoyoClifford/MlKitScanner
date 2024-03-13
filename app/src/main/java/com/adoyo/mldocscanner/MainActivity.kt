@@ -34,6 +34,8 @@ import com.google.mlkit.vision.documentscanner.GmsDocumentScannerOptions.RESULT_
 import com.google.mlkit.vision.documentscanner.GmsDocumentScannerOptions.SCANNER_MODE_FULL
 import com.google.mlkit.vision.documentscanner.GmsDocumentScanning
 import com.google.mlkit.vision.documentscanner.GmsDocumentScanningResult
+import java.io.File
+import java.io.FileOutputStream
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -64,6 +66,13 @@ class MainActivity : ComponentActivity() {
                                 val result =
                                     GmsDocumentScanningResult.fromActivityResultIntent(it.data)
                                 imageUris = result?.pages?.map { it.imageUri } ?: emptyList()
+
+                                result?.pdf?.let { pdf ->
+                                    val fos = FileOutputStream(File(filesDir, "scan.pdf"))
+                                    contentResolver.openInputStream(pdf.uri)?.use {
+                                        it.copyTo(fos)
+                                    }
+                                }
                             }
                         }
 
