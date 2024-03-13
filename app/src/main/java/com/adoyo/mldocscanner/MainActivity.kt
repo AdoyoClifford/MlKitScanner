@@ -2,6 +2,7 @@ package com.adoyo.mldocscanner
 
 import android.net.Uri
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.compose.setContent
@@ -10,6 +11,8 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -18,6 +21,7 @@ import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.tooling.preview.Preview
 import coil.compose.AsyncImage
 import com.adoyo.mldocscanner.ui.theme.MlDocScannerTheme
@@ -61,7 +65,28 @@ class MainActivity : ComponentActivity() {
                         horizontalAlignment = Alignment.CenterHorizontally
                     ) {
                         imageUris.forEach { uri ->
-                            AsyncImage(model = uri, contentDescription = null)
+                            AsyncImage(
+                                model = uri,
+                                contentDescription = null,
+                                contentScale = ContentScale.FillWidth,
+                                modifier = Modifier.fillMaxWidth()
+                            )
+                        }
+
+                        Button(onClick = {
+                            scanner.getStartScanIntent(this@MainActivity)
+                                .addOnSuccessListener {
+
+                                }
+                                .addOnFailureListener {
+                                    Toast.makeText(
+                                        applicationContext,
+                                        "Failed to start scanner",
+                                        Toast.LENGTH_SHORT
+                                    ).show()
+                                }
+                        }) {
+                            Text(text = "Scan PDF")
                         }
                     }
                 }
