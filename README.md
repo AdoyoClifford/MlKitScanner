@@ -20,4 +20,14 @@ Choose whether you want to save the scanned document as an image or a PDF file.
 The scanned document will be saved to your device's storage.
 
 ## ScreenShots
-![Image 1](/home/adoyo/AndroidStudioProjects/MlDocScanner/photos/picture1.png)
+<div style="display: flex; flex-direction: row;">
+    <div>
+        <h3>Image 1</h3>
+        <img src="photos/picture1.png" width="200" height="400" alt="Home Screen"/>
+    </div>
+    <div>
+        <h3>Image 2</h3>
+        <img src="photos/picture2.png" width="200" height="400" alt="Search Screen"/>
+    </div>
+
+</div>
