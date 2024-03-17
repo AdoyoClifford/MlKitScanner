@@ -18,3 +18,6 @@ Optionally, you can add more pages to the document by tapping the "Add Page" but
 Once you've captured all the pages, tap the "Done" button.
 Choose whether you want to save the scanned document as an image or a PDF file.
 The scanned document will be saved to your device's storage.
+
+## ScreenShots
+![Image 1](/home/adoyo/AndroidStudioProjects/MlDocScanner/photos/picture1.png)
