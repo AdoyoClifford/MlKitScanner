@@ -23,11 +23,11 @@ The scanned document will be saved to your device's storage.
 <div style="display: flex; flex-direction: row;">
     <div>
         <h3>Image 1</h3>
-        <img src="photos/picture1.png" width="200" height="400" alt="Home Screen"/>
+        <img src="photos/picture1.png" width="800" height="400" alt="Home Screen"/>
     </div>
     <div>
         <h3>Image 2</h3>
-        <img src="photos/picture2.png" width="200" height="400" alt="Search Screen"/>
+        <img src="photos/picture2.png" width="800" height="400" alt="Search Screen"/>
     </div>
 
 </div>
