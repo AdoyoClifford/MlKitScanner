@@ -1,6 +1,6 @@
 package com.adoyo.mldocscanner
 
-import junit.framework.TestCase.assertEquals
+import junit.framework.TestCase.*
 import org.junit.Test
 
 /**
