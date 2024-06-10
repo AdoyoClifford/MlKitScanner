@@ -31,7 +31,7 @@ jobs:
 
 
       - name: make gradlew executable
-        run: chmod+x ./gradlew
+        run: chmod +x ./gradlew
 
       - name: run lint
         run: ./gradlew  ktlintCheck
